@@ -1,5 +1,6 @@
 services:
     web:
+        build: .
         image: web
         container_name: web
         command: bash -c "gunicorn blogpractice.wsgi:application -b 0.0.0.0:8000"
