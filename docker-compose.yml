@@ -1,6 +1,5 @@
 services:
     web:
-        build: .
         image: web
         container_name: web
         command: bash -c "gunicorn blogpractice.wsgi:application -b 0.0.0.0:8000"
@@ -35,8 +34,7 @@ services:
         image: certbot/certbot
         volumes:
             - ./cert/certbot/conf:/etc/letsencrypt
-            - ./cert/certbot/www:/var/www/certbot
-        entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'" 
+            - ./cert/certbot/www:/var/www/certbot 
 
 networks:
     server:
