@@ -20,4 +20,5 @@ __pycache__/
 Thumbs.db
 
 # Django local settings
-local_settings.pycert/
+local_settings.py
+pycert/
